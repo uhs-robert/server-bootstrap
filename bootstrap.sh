@@ -144,6 +144,13 @@ if ! grep -q '.bashrc' "$PROFILE_PATH"; then
 fi
 chown $USERNAME:$USERNAME "$PROFILE_PATH"
 
+echo "Copying root's SSH key to $USERNAME..."
+mkdir -p /home/$USERNAME/.ssh
+cp /root/.ssh/authorized_keys /home/$USERNAME/.ssh/
+chown -R $USERNAME:$USERNAME /home/$USERNAME/.ssh
+chmod 700 /home/$USERNAME/.ssh
+chmod 600 /home/$USERNAME/.ssh/authorized_keys
+
 echo "Setting enhanced dynamic MOTD..."
 
 cat >/etc/profile.d/motd.sh <<'EOF'
