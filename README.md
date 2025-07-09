@@ -27,5 +27,7 @@ Built by [UpHill Solutions](https://uphillsolutions.tech) for internal and clien
 SSH into your server and run:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/uhs-robert/server-bootstrap/main/bootstrap.sh | bash
+curl -O https://raw.githubusercontent.com/uhs-robert/server-bootstrap/main/bootstrap.sh
+chmod +x bootstrap.sh
+./bootstrap.sh
 ```
